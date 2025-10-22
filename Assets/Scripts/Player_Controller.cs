@@ -28,6 +28,8 @@ public class Player_Controller : MonoBehaviour
 
     void Update()
     {
+        if(LockingInteraction.ins.lockingObject != null)
+            return;
         CameraMovement();
         PlayerMovement();
     }

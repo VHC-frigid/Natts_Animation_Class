@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9205910608215041477}
   - component: {fileID: 6535273673095189046}
   - component: {fileID: 3624247701699962836}
+  - component: {fileID: 7635002107569654989}
   m_Layer: 0
   m_Name: Mesa.005
   m_TagString: Untagged
@@ -87,6 +88,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7635002107569654989
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167510492536465726}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -563444555164324153, guid: aa865504a23518645a329f12a4fb0ab2, type: 3}
 --- !u!1 &4246911179382905867
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,6 +207,7 @@ GameObject:
   - component: {fileID: 7316450642087336319}
   - component: {fileID: 4360515148435110211}
   - component: {fileID: 252531843245088241}
+  - component: {fileID: 4188743395716985512}
   m_Layer: 0
   m_Name: RetroMonitor
   m_TagString: Untagged
@@ -259,6 +283,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4188743395716985512
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5316198182783552276}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4205100940242137950, guid: 68b73b78c7e8d5345aad152aa1fb573e, type: 3}
 --- !u!1 &5669707769569854318
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,6 +316,7 @@ GameObject:
   - component: {fileID: 3589130759695752661}
   - component: {fileID: 5244465181280948111}
   - component: {fileID: 1088538932329367847}
+  - component: {fileID: 546876147604551835}
   m_Layer: 0
   m_Name: RetroKeyboard
   m_TagString: Untagged
@@ -345,6 +392,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &546876147604551835
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5669707769569854318}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6569507348484213796, guid: 68b73b78c7e8d5345aad152aa1fb573e, type: 3}
 --- !u!1 &6029671414858483311
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,6 +425,7 @@ GameObject:
   - component: {fileID: 8270055115934966440}
   - component: {fileID: 880060964115100127}
   - component: {fileID: 7007639039079022065}
+  - component: {fileID: 927852050763868766}
   m_Layer: 0
   m_Name: RetroComputer
   m_TagString: Untagged
@@ -431,6 +501,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &927852050763868766
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6029671414858483311}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 239816654390165595, guid: 68b73b78c7e8d5345aad152aa1fb573e, type: 3}
 --- !u!1 &8219729990527846735
 GameObject:
   m_ObjectHideFlags: 0

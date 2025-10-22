@@ -2,11 +2,14 @@ using UnityEngine;
 
 public class Player_Interaction : MonoBehaviour
 {
-    public Camera FPScamera;
+    Camera mainCamera;
     public float interactRange;
-
+    bool cameraSet = false;
     private void Update()
     {
+        if (!cameraSet && mainCamera == null)
+            mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             interaction();
@@ -16,15 +19,16 @@ public class Player_Interaction : MonoBehaviour
     public void interaction()
     {
         RaycastHit hit;
-        if (Physics.Raycast(FPScamera.transform.position, FPScamera.transform.forward, out hit, interactRange))
+        if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit, interactRange))
         {
             //Debug.Log(hit.transform.name);
-
-            Door_Switch doorswitch = hit.transform.GetComponent<Door_Switch>();
-            
-            if (doorswitch != null)
+            if(hit.transform.TryGetComponent(out Door_Switch doorSwitch))
             {
-                doorswitch.ToggleMetalDoor();
+                doorSwitch.ToggleMetalDoor();
+            }
+            if(hit.transform.TryGetComponent(out ILockingInteract lockingInteract))
+            {
+                lockingInteract.StartLockInteract();
             }
         }
     }
