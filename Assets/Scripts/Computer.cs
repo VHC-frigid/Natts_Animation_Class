@@ -8,8 +8,6 @@ public class Computer : MonoBehaviour, ILockingInteract
     {
         if (CameraLocking.ins.currentLock == cameraLockTransform)
             CameraLocking.ins.currentLock = null;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
     }
     public void StartLockInteract()
     {
@@ -17,7 +15,5 @@ public class Computer : MonoBehaviour, ILockingInteract
         LockingInteraction.ins.StartLock(transform);
         cameraLocking.currentLock = cameraLockTransform;
         cameraLocking.currentFOV = cameraLockFOV;
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
     }
 }

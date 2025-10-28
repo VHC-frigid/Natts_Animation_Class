@@ -23,7 +23,7 @@ public class LockingInteraction : MonoBehaviour
     }
     private void Update()
     {
-        if (locked && Input.GetKeyDown(KeyCode.Q))
+        if (locked && Input.GetKeyDown(KeyCode.Escape))
         {
 #if UNITY_EDITOR
             Cursor.visible = false;
