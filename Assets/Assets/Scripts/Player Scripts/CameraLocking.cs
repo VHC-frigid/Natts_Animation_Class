@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class CameraLocking : MonoBehaviour
 {
+    //[SerializeField] private Camera _camera;
     public static CameraLocking ins;
     private void Awake()
     {

@@ -23,12 +23,12 @@ public class LockingInteraction : MonoBehaviour
     }
     private void Update()
     {
-        if (locked && Input.GetKeyDown(KeyCode.Escape))
+        if (locked && Input.GetKeyDown(KeyCode.Q))
         {
-#if UNITY_EDITOR
+//#if UNITY_EDITOR
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
-#endif
+//#endif
             if (lockingObject != null)//in case it gets destroyed or some shit
             {
                 if (lockingObject.TryGetComponent<ILockingInteract>(out var currentLock))
