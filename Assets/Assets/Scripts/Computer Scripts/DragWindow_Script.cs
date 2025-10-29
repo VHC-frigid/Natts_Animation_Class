@@ -60,6 +60,16 @@ public class DragWindow_Script : MonoBehaviour, IDragHandler, IPointerDownHandle
     {
         if(beingDragged)
         {
+            //if rectTransform.position has left the canvas borders then dont move it anymore
+            //if(outOfBorders)
+            //{
+            //      right boundary = canvas.rectTransform.x + canvas.rect.width/2f
+            //      left boundary = canvas.rectTransform.x - canvas.rect.width / 2f
+            //          if(rectTransform.position.x > rightBoundary)
+            //          if(rectTransform.position.x < leftBoundary)
+            //    return;
+            //}
+
             rectTransform.position = currentMousePosition + startDelta;
         }
     }
