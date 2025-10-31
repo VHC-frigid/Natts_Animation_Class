@@ -25,14 +25,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2273096410765697085}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.66950804, y: 0.66950804, z: 0.66950804}
+  m_LocalScale: {x: 0.66950804, y: 0.6695081, z: 0.66950804}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3519470496786761388}
   - {fileID: 7080984311796788229}
-  m_Father: {fileID: 4015188166869676813}
+  m_Father: {fileID: 7235975859067384513}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 7235975859067384513}
   - component: {fileID: 4876875412504887065}
   - component: {fileID: 7973880781634078780}
+  - component: {fileID: 4756280244316715568}
   m_Layer: 5
   m_Name: Desktop_Background
   m_TagString: Untagged
@@ -90,7 +91,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2422054459495839086}
   m_Father: {fileID: 4015188166869676813}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -133,6 +135,19 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &4756280244316715568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5726032722312844987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 1
 --- !u!1 &5746200312643672133
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +256,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7235975859067384513}
-  - {fileID: 2422054459495839086}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
