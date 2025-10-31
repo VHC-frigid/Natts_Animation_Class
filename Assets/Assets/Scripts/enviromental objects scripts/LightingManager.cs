@@ -2,12 +2,12 @@ using UnityEditor.Experimental;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.Rendering;
-
 [ExecuteAlways]
 public class LightingManager : MonoBehaviour
 {
     //References
     [SerializeField] private Light _directionalLight;
+    [SerializeField] private Light[] fakeBounceLightSources;
     [SerializeField] private LightingPreset _preset;
     //Variables
     [SerializeField, Range(0, 24)] private float _timeOfDay;
@@ -37,7 +37,11 @@ public class LightingManager : MonoBehaviour
         if (_directionalLight != null)
         {
             _directionalLight.color = _preset.DirectionalColour.Evaluate(timePercent);
-            _directionalLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercent * 360f) - 90f, 170f, 0));
+            for (int i = 0; i < fakeBounceLightSources.Length; i++)
+            {
+                fakeBounceLightSources[i].color = _preset.DirectionalColour.Evaluate(timePercent) * 0.5f;
+            }
+            _directionalLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercent * 360f) - 90f, 190f, 0));
         }
     }
 
