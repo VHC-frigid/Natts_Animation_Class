@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.003
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 1, g: 0.9963428, b: 0.9908958, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 0.97798824, b: 0.9452048, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0
@@ -1424,7 +1424,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 0.5, g: 0.4981714, b: 0.4954479, a: 0.5}
+  m_Color: {r: 0.5, g: 0.48899412, b: 0.4726024, a: 0.5}
   m_Intensity: 0.8
   m_Range: 10
   m_SpotAngle: 30
@@ -8403,7 +8403,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 0.5, g: 0.4981714, b: 0.4954479, a: 0.5}
+  m_Color: {r: 0.5, g: 0.48899412, b: 0.4726024, a: 0.5}
   m_Intensity: 0.8
   m_Range: 10
   m_SpotAngle: 30
@@ -10832,6 +10832,7 @@ GameObject:
   - component: {fileID: 741071910}
   - component: {fileID: 741071909}
   - component: {fileID: 741071911}
+  - component: {fileID: 741071912}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -10885,7 +10886,23 @@ MonoBehaviour:
   - {fileID: 90356988}
   - {fileID: 1128984000}
   _preset: {fileID: 11400000, guid: d088f97893755d14ab52848385b768e3, type: 2}
-  _timeOfDay: 12.2
+  _timeOfDay: 11.5
+--- !u!114 &741071912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741071908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b10424009f0d9649b243543f58d2705, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterQuality: 0
+  soilQuality: 0
+  CampStationText: {fileID: 1541231515}
+  DockStationText: {fileID: 510597655}
 --- !u!1001 &741810681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15565,7 +15582,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 0.5, g: 0.4981714, b: 0.4954479, a: 0.5}
+  m_Color: {r: 0.5, g: 0.48899412, b: 0.4726024, a: 0.5}
   m_Intensity: 0.8
   m_Range: 10
   m_SpotAngle: 30
@@ -24865,7 +24882,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 0.5, g: 0.4981714, b: 0.4954479, a: 0.5}
+  m_Color: {r: 0.5, g: 0.48899412, b: 0.4726024, a: 0.5}
   m_Intensity: 0.8
   m_Range: 10
   m_SpotAngle: 30
@@ -29481,7 +29498,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 1, g: 0.9963428, b: 0.9908958, a: 1}
+  m_Color: {r: 1, g: 0.97798824, b: 0.9452048, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -29544,7 +29561,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029015820}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.06322056, y: 0.6857352, z: -0.7226141, w: -0.059994075}
+  m_LocalRotation: {x: -0.057465788, y: 0.74897885, z: -0.6568368, w: -0.06552718}
   m_LocalPosition: {x: 50.754833, y: 28.838415, z: 27.307772}
   m_LocalScale: {x: 0, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

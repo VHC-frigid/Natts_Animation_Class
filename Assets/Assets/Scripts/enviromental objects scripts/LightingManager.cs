@@ -1,3 +1,4 @@
+using System;
 using UnityEditor.Experimental;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
@@ -10,7 +11,8 @@ public class LightingManager : MonoBehaviour
     [SerializeField] private Light[] fakeBounceLightSources;
     [SerializeField] private LightingPreset _preset;
     //Variables
-    [SerializeField, Range(0, 24)] private float _timeOfDay;
+    //[SerializeField, Range(0, 24)] private float _timeOfDay;
+    [SerializeField, Range(0, 24)] public float _timeOfDay;
 
     private void Update()
     {
