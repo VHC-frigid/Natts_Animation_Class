@@ -7,54 +7,68 @@ using UnityEngine.Rendering;
 public class LightingManager : MonoBehaviour
 {
     //References
-    [SerializeField] private Light _directionalLight;
+    [SerializeField] private Light directionalLight;
     [SerializeField] private Light[] fakeBounceLightSources;
-    [SerializeField] private LightingPreset _preset;
+    [SerializeField] private LightingPreset preset;
     //Variables
-    //[SerializeField, Range(0, 24)] private float _timeOfDay;
-    [SerializeField, Range(0, 24)] public float _timeOfDay;
+    //[SerializeField, Range(0, 24)] private float timeOfDay;
+    [SerializeField, Range(0, 24)] public float timeOfDay;
+
+    public int day;
+    public static LightingManager ins;
+
+    public void Awake()
+    {
+        ins = this;
+    }
 
     private void Update()
     {
-        if (_preset == null)
+        if (preset == null)
             return;
 
         if (Application.isPlaying)
         {
-            _timeOfDay += Time.deltaTime * 24f/360f;
-            _timeOfDay %= 24; //clamp between 0-24
-            UpdateLighting(_timeOfDay / 24f);
+            timeOfDay += Time.deltaTime * 24f/360f;
+
+            if (timeOfDay >= 24)
+            {
+                timeOfDay = 0;
+                day++;
+            }
+
+            UpdateLighting(timeOfDay / 24f);
         }
         else
         {
-            UpdateLighting(_timeOfDay/ 24f);
+            UpdateLighting(timeOfDay/ 24f);
         }
     }
 
     private void UpdateLighting(float timePercent)
     {
-        UnityEngine.RenderSettings.ambientLight = _preset.AmbientColour.Evaluate(timePercent);
-        UnityEngine.RenderSettings.fogColor = _preset.FogColour.Evaluate(timePercent);
+        UnityEngine.RenderSettings.ambientLight = preset.AmbientColour.Evaluate(timePercent);
+        UnityEngine.RenderSettings.fogColor = preset.FogColour.Evaluate(timePercent);
 
-        if (_directionalLight != null)
+        if (directionalLight != null)
         {
-            _directionalLight.color = _preset.DirectionalColour.Evaluate(timePercent);
+            directionalLight.color = preset.DirectionalColour.Evaluate(timePercent);
             for (int i = 0; i < fakeBounceLightSources.Length; i++)
             {
-                fakeBounceLightSources[i].color = _preset.DirectionalColour.Evaluate(timePercent) * 0.5f;
+                fakeBounceLightSources[i].color = preset.DirectionalColour.Evaluate(timePercent) * 0.5f;
             }
-            _directionalLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercent * 360f) - 90f, 190f, 0));
+            directionalLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercent * 360f) - 90f, 190f, 0));
         }
     }
 
     private void OnValidate()
     {
-        if (_directionalLight != null)
+        if (directionalLight != null)
             return;
 
         if (UnityEngine.RenderSettings.sun != null)
         {
-            _directionalLight = UnityEngine.RenderSettings.sun;
+            directionalLight = UnityEngine.RenderSettings.sun;
         }
         else
         {
@@ -63,7 +77,7 @@ public class LightingManager : MonoBehaviour
             {
                 if (light.type == UnityEngine.LightType.Directional)
                 {
-                    _directionalLight = light;
+                    directionalLight = light;
                     return;
                 }
             }
