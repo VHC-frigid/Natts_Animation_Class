@@ -4,6 +4,8 @@ public class Computer : MonoBehaviour, ILockingInteract
 {
     public Transform cameraLockTransform;
     public float cameraLockFOV;
+    public GameObject player;
+
     //[SerializeField] private GameObject PCScreen;
     public void OnEndLockInteract()
     {
@@ -11,6 +13,7 @@ public class Computer : MonoBehaviour, ILockingInteract
             CameraLocking.ins.currentLock = null;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        player.GetComponent<FlashLight>().enabled = true;
         //PCScreen.SetActive(false);
     }
     public void StartLockInteract()
@@ -21,6 +24,7 @@ public class Computer : MonoBehaviour, ILockingInteract
         cameraLocking.currentFOV = cameraLockFOV;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        player.GetComponent<FlashLight>().enabled = false;
         //PCScreen.SetActive(true);
     }
 
