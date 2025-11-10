@@ -13,7 +13,7 @@ public class FlashLight : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             Flashlight();
         }

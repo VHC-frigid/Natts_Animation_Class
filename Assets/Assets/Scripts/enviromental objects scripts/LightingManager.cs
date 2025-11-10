@@ -13,6 +13,7 @@ public class LightingManager : MonoBehaviour
     //Variables
     //[SerializeField, Range(0, 24)] private float timeOfDay;
     [SerializeField, Range(0, 24)] public float timeOfDay;
+    [SerializeField] float timeInDays;
 
     public int day;
     public static LightingManager ins;
@@ -29,7 +30,7 @@ public class LightingManager : MonoBehaviour
 
         if (Application.isPlaying)
         {
-            timeOfDay += Time.deltaTime * 24f/360f;
+            timeOfDay += Time.deltaTime * 24f/timeInDays;
 
             if (timeOfDay >= 24)
             {
