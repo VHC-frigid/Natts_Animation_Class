@@ -22,7 +22,7 @@ public class Station : MonoBehaviour
         if (timeOfDay >= timeOfDayActivation && !activatedToday)
         {
             activatedToday=true;
-            stationOutput = Random.Range(0, 10000);
+            stationOutput = Random.Range(1000, 10000);
             stationText.text = stationOutput.ToString();
         }
         

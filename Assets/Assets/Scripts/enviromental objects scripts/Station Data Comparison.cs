@@ -6,13 +6,7 @@ public class StationDataComparison : MonoBehaviour
     [SerializeField] private TextMeshProUGUI stationText;
     [SerializeField] private TextMeshProUGUI computerText;
 
-    [SerializeField] private TextMeshProUGUI pointsText;
-    public int points;
-
-    private void Start()
-    {
-        pointsText.text = points.ToString() + " Points";
-    }
+    public GameObject player;
 
     string Clean(string input)
     {
@@ -26,22 +20,12 @@ public class StationDataComparison : MonoBehaviour
 
         if (comp == stat)
         {
-            CorrectData();
-            //Debug.Log("skibidi 67 alert"); 
+            player.GetComponent<MoneyHandler>().CorrectDataReward();
         }
         else
         {
-            Debug.Log("not the right code"); 
+            //Debug.Log("not the right code"); 
         }
-        //Debug.Log("Submission");
-        //Debug.Log("Computer Text is" + computerText.text);
-        //Debug.Log("station Text is" + stationText.text);
-    }
-
-    public void CorrectData()
-    {
-        pointsText.text = points.ToString() + " Points";
-        points += 1;
-        Debug.Log("Guh");
+        
     }
 }

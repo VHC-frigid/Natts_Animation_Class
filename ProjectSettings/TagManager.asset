@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Inside switch
   - Outside Switch
+  - Trash
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - PlayerBody
   - 
   - 
   - 
