@@ -8,6 +8,7 @@ TagManager:
   - Outside Switch
   - Trash
   - Untagged.
+  - MinigameVfx
   layers:
   - Default
   - TransparentFX
