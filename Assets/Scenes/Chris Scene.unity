@@ -9062,6 +9062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trashPrefab: {fileID: 3088231847830353142, guid: 1994bcbd646cf7c4a8d3c09960877f05, type: 3}
+  trashAmount: 8
   minX: 119
   maxX: 131
   minZ: 95
