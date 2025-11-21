@@ -5,6 +5,7 @@ public class TrashSpawner : MonoBehaviour
 {
     [Header("Trash Objects")]
     public GameObject trashPrefab;
+    public int trashAmount;
 
     [Header("Dropping Position")]
     public float minX;
@@ -25,16 +26,19 @@ public class TrashSpawner : MonoBehaviour
         {
             activatedToday = false;
             day = LightingManager.ins.day;
+            trashAmount = 8;
         }
 
         if (timeOfDay >= timeOfDayActivation && !activatedToday)
         {
             activatedToday = true;
-            SpawnTrash();
-            SpawnTrash();
-            SpawnTrash();
-            SpawnTrash();
-            SpawnTrash();
+
+            while(trashAmount > 0)
+            {
+                SpawnTrash();
+                trashAmount--;
+            }
+            
         }
     }
 
