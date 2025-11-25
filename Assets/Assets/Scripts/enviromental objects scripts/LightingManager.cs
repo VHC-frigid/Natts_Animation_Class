@@ -3,15 +3,19 @@ using UnityEditor.Experimental;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.Rendering;
+using TMPro;
+
 [ExecuteAlways]
 public class LightingManager : MonoBehaviour
 {
+    public TextMeshProUGUI currentTime;
+
     //References
     [SerializeField] private Light directionalLight;
     [SerializeField] private Light[] fakeBounceLightSources;
     [SerializeField] private LightingPreset preset;
+
     //Variables
-    //[SerializeField, Range(0, 24)] private float timeOfDay;
     [SerializeField, Range(0, 24)] public float timeOfDay;
     [SerializeField] float timeInDays;
 
@@ -44,6 +48,11 @@ public class LightingManager : MonoBehaviour
         {
             UpdateLighting(timeOfDay/ 24f);
         }
+
+        float minutes = MathF.Floor(timeOfDay / 60);
+        float hours = MathF.Floor(timeOfDay % 60);
+
+        currentTime.text = string.Format("{0:00}:{1:00}",hours,minutes);
     }
 
     private void UpdateLighting(float timePercent)

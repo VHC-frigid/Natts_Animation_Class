@@ -132,7 +132,7 @@ public class Hand : MonoBehaviour
                 break;
         }
     }
-    //
+    
     public virtual IEnumerator CoolDown()
     {
         readyToGrab = false;

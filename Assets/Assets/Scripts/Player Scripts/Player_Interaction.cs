@@ -1,18 +1,23 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player_Interaction : MonoBehaviour
 {
     Camera mainCamera;
     public float interactRange;
     bool cameraSet = false;
+
+    public UnityEvent computerInteraction;
+
     private void Update()
     {
         if (!cameraSet && mainCamera == null)
             mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && computerInteraction != null)
         {
-            interaction();
+            computerInteraction.Invoke();
         }
     }
 
@@ -29,7 +34,9 @@ public class Player_Interaction : MonoBehaviour
             if(hit.transform.TryGetComponent(out ILockingInteract lockingInteract))
             {
                 lockingInteract.StartLockInteract();
+                Debug.Log("Entering Computer");
             }
         }
     }
+
 }

@@ -8,6 +8,9 @@ public class StationDataComparison : MonoBehaviour
 
     public GameObject player;
 
+    //[SerializeField] private bool dataCollectedToday;
+    public bool dataCollectedToday;
+
     string Clean(string input)
     {
         return input.Replace("\u200B", "").Trim();
@@ -18,14 +21,19 @@ public class StationDataComparison : MonoBehaviour
         string comp = Clean(computerText.text);
         string stat = Clean(stationText.text);
 
-        if (comp == stat)
+        if (dataCollectedToday == false)
         {
-            player.GetComponent<MoneyHandler>().CorrectDataReward();
+            if (comp == stat)
+            {
+                player.GetComponent<MoneyHandler>().CorrectDataReward();
+                dataCollectedToday = true;
+            }
+            else
+            {
+                //Debug.Log("not the right code"); 
+            }
         }
-        else
-        {
-            //Debug.Log("not the right code"); 
-        }
-        
+
     }
+
 }

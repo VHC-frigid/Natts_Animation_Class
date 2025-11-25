@@ -55,7 +55,7 @@ public class Player_Controller : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space) && !_isJumping)
             {
-                Debug.Log("Jumping ");
+                //Debug.Log("Jumping ");
                 _newVelocity.y = jumpSpeed;
                 _isJumping = true;
             }

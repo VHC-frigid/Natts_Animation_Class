@@ -28,5 +28,4 @@ public class Computer : MonoBehaviour, ILockingInteract
         //PCScreen.SetActive(true);
     }
 
-
 }

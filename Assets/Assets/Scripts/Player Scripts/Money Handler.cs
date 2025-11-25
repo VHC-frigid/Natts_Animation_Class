@@ -6,6 +6,7 @@ public class MoneyHandler : MonoBehaviour
     
     [SerializeField] private TextMeshProUGUI pointsText;
     public int points;
+    public int rewardAmount;
 
     private void Start()
     {
@@ -19,7 +20,7 @@ public class MoneyHandler : MonoBehaviour
 
     public void CorrectDataReward()
     {
-        points += 1;
+        points += rewardAmount;
         pointsText.text = points.ToString() + " Points";
         //Debug.Log("trying to increase score");
     }

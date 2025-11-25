@@ -3,11 +3,15 @@ using TMPro;
 
 public class Station : MonoBehaviour
 {
-    public int stationOutput;
-    public float timeOfDayActivation;
-    public bool activatedToday;
-    public int day;
     public TMP_Text stationText;
+    
+    public int stationOutput;
+
+    public float timeOfDayActivation;
+    public bool newCodeToday;
+    public int day;
+
+    [SerializeField] private GameObject sharedStationInputField;
 
     private void Update()
     {
@@ -15,15 +19,16 @@ public class Station : MonoBehaviour
 
         if (day != LightingManager.ins.day)
         {
-            activatedToday = false;
+            newCodeToday = false;
             day = LightingManager.ins.day;
         }
 
-        if (timeOfDay >= timeOfDayActivation && !activatedToday)
+        if (timeOfDay >= timeOfDayActivation && !newCodeToday)
         {
-            activatedToday=true;
+            newCodeToday = true;
             stationOutput = Random.Range(1000, 10000);
             stationText.text = stationOutput.ToString();
+            sharedStationInputField.GetComponent<StationDataComparison>().dataCollectedToday = false;
         }
         
     }
