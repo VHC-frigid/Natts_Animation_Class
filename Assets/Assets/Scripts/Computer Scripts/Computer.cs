@@ -19,6 +19,10 @@ public class Computer : MonoBehaviour, ILockingInteract
     public void StartLockInteract()
     {
         var cameraLocking = CameraLocking.ins;
+        if (LockingInteraction.ins.locked)
+        {
+            return;
+        }
         LockingInteraction.ins.StartLock(transform);
         cameraLocking.currentLock = cameraLockTransform;
         cameraLocking.currentFOV = cameraLockFOV;

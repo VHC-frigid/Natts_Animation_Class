@@ -8,6 +8,8 @@ public class Player_Interaction : MonoBehaviour
     public float interactRange;
     bool cameraSet = false;
 
+    public GameObject player;
+
     public UnityEvent computerInteraction;
 
     private void Update()
@@ -15,14 +17,18 @@ public class Player_Interaction : MonoBehaviour
         if (!cameraSet && mainCamera == null)
             mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
 
-        if (Input.GetKeyDown(KeyCode.E) && computerInteraction != null)
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            computerInteraction.Invoke();
+            interaction();
         }
     }
 
     public void interaction()
     {
+        if (LockingInteraction.ins.locked)
+        {
+            return;
+        }
         RaycastHit hit;
         if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit, interactRange))
         {
@@ -34,6 +40,7 @@ public class Player_Interaction : MonoBehaviour
             if(hit.transform.TryGetComponent(out ILockingInteract lockingInteract))
             {
                 lockingInteract.StartLockInteract();
+                //player.GetComponent<Player_Interaction>().enabled = false;
                 Debug.Log("Entering Computer");
             }
         }

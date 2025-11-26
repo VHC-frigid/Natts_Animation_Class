@@ -49,7 +49,7 @@ public class LightingManager : MonoBehaviour
             UpdateLighting(timeOfDay/ 24f);
         }
 
-        float minutes = MathF.Floor(timeOfDay / 60);
+        float minutes = MathF.Floor(timeOfDay * 60) % 60;
         float hours = MathF.Floor(timeOfDay % 60);
 
         currentTime.text = string.Format("{0:00}:{1:00}",hours,minutes);
