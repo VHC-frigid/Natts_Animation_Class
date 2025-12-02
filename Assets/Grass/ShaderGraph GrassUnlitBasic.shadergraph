@@ -1441,7 +1441,7 @@
     "m_Title": "Grass Painted Color",
     "m_Position": {
         "x": 724.7999877929688,
-        "y": 144.8000946044922
+        "y": 144.79998779296876
     }
 }
 
@@ -1910,7 +1910,7 @@
     "m_Title": "Blend Switch",
     "m_Position": {
         "x": 1378.4002685546875,
-        "y": 135.20005798339845
+        "y": 135.20001220703126
     }
 }
 
@@ -2982,8 +2982,12 @@
 
 {
     "m_SGVersion": 2,
-    "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalUnlitSubTarget",
-    "m_ObjectId": "d9e748a6c55643dda4e8b1b8c673a9f7"
+    "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalLitSubTarget",
+    "m_ObjectId": "d9e748a6c55643dda4e8b1b8c673a9f7",
+    "m_WorkflowMode": 1,
+    "m_NormalDropOffSpace": 0,
+    "m_ClearCoat": false,
+    "m_BlendModePreserveSpecular": true
 }
 
 {
@@ -3438,8 +3442,8 @@
     "m_ObjectId": "f7330befd4a1454598de51903e691fbc",
     "m_Title": "Blending Texture",
     "m_Position": {
-        "x": -111.20004272460938,
-        "y": -88.79995727539063
+        "x": -111.20001220703125,
+        "y": -88.79998779296875
     }
 }
 
@@ -3450,7 +3454,7 @@
     "m_Title": "Top and Bottom Blend",
     "m_Position": {
         "x": 201.60003662109376,
-        "y": 531.1998901367188
+        "y": 531.2000122070313
     }
 }
 
