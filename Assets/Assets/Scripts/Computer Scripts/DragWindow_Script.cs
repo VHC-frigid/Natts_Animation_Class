@@ -12,6 +12,8 @@ public class DragWindow_Script : MonoBehaviour, IDragHandler, IPointerDownHandle
     bool beingDragged;
     Vector3 startDelta;
     Vector3 currentMousePosition;
+    public GameObject panel;
+
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -19,6 +21,23 @@ public class DragWindow_Script : MonoBehaviour, IDragHandler, IPointerDownHandle
         if (graphicRaycaster == null)
         {
             Debug.LogError("DragWindow_Script Error: No graphic raycaster found on parent canvas!");
+        }
+    }
+    private void Update()
+    {
+        if(beingDragged)
+        {
+            //if rectTransform.position has left the canvas borders then dont move it anymore
+            //if(outOfBorders)
+            //{
+            //      right boundary = canvas.rectTransform.x + canvas.rect.width/2f
+            //      left boundary = canvas.rectTransform.x - canvas.rect.width / 2f
+            //          if(rectTransform.position.x > rightBoundary)
+            //          if(rectTransform.position.x < leftBoundary)
+            //    return;
+            //}
+
+            rectTransform.position = currentMousePosition + startDelta;
         }
     }
     public void OnDrag(PointerEventData eventData)
@@ -56,21 +75,16 @@ public class DragWindow_Script : MonoBehaviour, IDragHandler, IPointerDownHandle
     {
         beingDragged = false;
     }
-    private void Update()
-    {
-        if(beingDragged)
-        {
-            //if rectTransform.position has left the canvas borders then dont move it anymore
-            //if(outOfBorders)
-            //{
-            //      right boundary = canvas.rectTransform.x + canvas.rect.width/2f
-            //      left boundary = canvas.rectTransform.x - canvas.rect.width / 2f
-            //          if(rectTransform.position.x > rightBoundary)
-            //          if(rectTransform.position.x < leftBoundary)
-            //    return;
-            //}
 
-            rectTransform.position = currentMousePosition + startDelta;
-        }
+    public void CloseWindow()
+    {
+        panel.gameObject.SetActive(false);
+        
+    }
+
+    public void OpenWindow()
+    {
+        panel.gameObject.SetActive(true);
+        //panel.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
     }
 }
