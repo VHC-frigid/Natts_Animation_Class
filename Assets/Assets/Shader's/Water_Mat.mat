@@ -73,11 +73,11 @@ Material:
     - Vector1_80CAEB23: 0.3
     - Vector1_8E5091B8: 0.33
     - Vector1_981A3A67: 1
-    - Vector1_C1C7D298: 0.687
+    - Vector1_C1C7D298: 0.224
     - Vector1_ECB3F2B8: 1
     - _BlendMode: 10
     - _BlendOp: 5
-    - _Depth_Intensity: 2.72
+    - _Depth_Intensity: 1.46
     - _Intensity: 2.9
     - _NoiseScale: 0.45
     - _QueueControl: 0
@@ -85,12 +85,12 @@ Material:
     - _Scale: 0.34
     - _Speed: 2
     m_Colors:
-    - Color_27D4D743: {r: 0.03214664, g: 0.32341036, b: 0.3962264, a: 0}
+    - Color_27D4D743: {r: 0, g: 0.28380507, b: 0.3584906, a: 0}
     - Color_51A4B6EC: {r: 1, g: 0.3372549, b: 0, a: 0}
     - Color_C347D0B: {r: 1, g: 0.15040906, b: 0, a: 0}
     - _Color: {r: 0.2679245, g: 0.2679245, b: 0.2679245, a: 1}
     - _ColorT: {r: 0, g: 0.19999999, b: 0.19999999, a: 0.6}
-    - _Depth_Colour: {r: 0.12450689, g: 0.26457295, b: 0.7584905, a: 0}
+    - _Depth_Colour: {r: 0, g: 0.061525762, b: 0.2830189, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &1579818471899195445
